@@ -1,0 +1,127 @@
+<h1 class="text-center">New Application Form</h1>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= form_for(@petition, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+      <div class="form_group">
+        <div class="control-label col-md-1">
+          <%= f.label :name %>
+        </div>
+        <div class="col-md-11">
+          <%= f.text_field :name, class: "form-control", placeholder: "John Doe", autofocus: true %>
+        </div>
+
+        <div class="control-label col-md-1">
+          <%= f.label :dob, "Date of Birth" %>
+        </div>
+        <div class="col-md-11">
+          <%= f.date_field :dob %>
+        </div>
+
+        <div class="control-label col-md-1">
+          <%= f.label :gender %>
+        </div>
+        <div class="col-md-11">
+          <%= f.select :gender, [['Female', 'female'], ['Male', 'male'], ['Other', 'other']]%>
+        </div>
+
+        <div class="control-label col-md-1">
+          <%= f.label :residency_type %>
+        </div>
+        <div class="col-md-11">
+          <%= f.select :residency_type, [['Engagement', 'engagement'], ['Enhancement', 'enhancement'], ['Lotus', 'lotus'], ['Other', 'other']]%>
+        </div>
+
+        <div class="control-label col-md-1">
+          <%= f.label :start_date, "Preferred Start Date" %>
+        </div>
+        <div class="col-md-11">
+          <%= f.date_field :start_date %>
+        </div>
+
+        <div class="control-label col-md-1">
+          <%= f.label :duration, "Duration Preference" %>
+        </div>
+        <div class="col-md-11">
+          <%= f.text_field :duration %>
+        </div>
+
+        <div class="control-label col-md-1">
+          <%= f.label :address %>
+        </div>
+        <div class="col-md-11">
+          <%= f.text_area :address, rows: 5 %>
+        </div>
+
+        <div class="control-label col-md-1">
+          <%= f.label :email %>
+        </div>
+        <div class="col-md-11">
+          <%= f.email_field :email %>
+        </div>
+
+        <div class="control-label col-md-1">
+          <%= f.label :phone %>
+        </div>
+        <div class="col-md-11">
+          <%= f.telephone_field :phone %>
+        </div>
+
+        <div class="control-label col-md-1">
+          <%= f.label :social_media, "Link to website, social media (Instagram, Twitter, Facebook, etc.) and/or digital portfolio" %>
+        </div>
+        <div class="col-md-11">
+          <%= f.text_area :social_media, rows: 5 %>
+        </div>
+
+        <div class="control-label col-md-1">
+          <%= f.label :practice_medium, "Describe your artistic practice and primary medium" %>
+        </div>
+        <div class="col-md-11">
+          <%= f.text_area :practice_medium, rows: 5 %>
+        </div>
+
+        <div class="control-label col-md-1">
+          <%= f.label :artistic_statement, "Please provide a brief artist statement" %>
+        </div>
+        <div class="col-md-11">
+          <%= f.text_area :artistic_statement, rows: 5 %>
+        </div>
+
+        <div class="control-label col-md-1">
+          <%= f.label :history, "Please give an overview of any previous workshop, or master class delivery experience" %>
+        </div>
+        <div class="col-md-11">
+          <%= f.text_area :history %>
+        </div>
+
+        <div class="control-label col-md-1">
+          <%= f.label :intention, "Please give an overview of intended studio work and / or artistic exploration for your residency" %>
+        </div>
+        <div class="col-md-11">
+          <%= f.text_area :intention, rows: 5 %>
+        </div>
+
+        <div class="control-label col-md-1">
+          <%= f.label :offering, "Please give an overview of the workshop, skills and or master class sessions that you would be willing to offer, as well as the age ranges you are comfortable with, or would like experience delivering to (our young people engaging with this programme range from 4 – 18 years)" %>
+        </div>
+        <div class="col-md-11">
+          <%= f.text_area :offering, rows: 5 %>
+        </div>
+
+        <div class="control-label col-md-1">
+          <%= f.label :references, "Please provide contact details for x 2 references and list any other relevant information that supports your residency application" %>
+        </div>
+        <div class="col-md-11">
+          <%= f.text_area :references, rows: 5 %>
+        </div>
+      </div>
+
+      <div class="form_group">
+        <div class="col-md-offset-1 col-md-11">
+          <%= f.submit("Submit Application", class: "btn btn-primary btn-lg pull-right") %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
