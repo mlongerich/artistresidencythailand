@@ -25,4 +25,44 @@ RSpec.feature "Submitting Applications"  do
     expect(page).to have_content("Application was successfully submitted")
     expect(page.current_path).to eq(petitions_path)
   end
+
+  scenario "A potential artist resident fails to submit an application" do
+    visit "/"
+    click_link "Application Form"
+    fill_in "Name", with: ""
+    fill_in "Date of Birth", with: ""
+    select "Select Gender", from: "Gender"
+    select "Select Type", from: "Residency type"
+    fill_in "Preferred Start Date", with: ""
+    fill_in "Duration Preference", with: ""
+    fill_in "Address", with: ""
+    fill_in "Email", with: ""
+    fill_in "Phone", with: ""
+    fill_in "Link to website, social media (Instagram, Twitter, Facebook, etc.) and/or digital portfolio", with: ""
+    fill_in "Describe your artistic practice and primary medium", with: ""
+    fill_in "Please provide a brief artist statement", with: ""
+    fill_in "Please give an overview of any previous workshop, or master class delivery experience", with: ""
+    fill_in "Please give an overview of intended studio work and / or artistic exploration for your residency", with: ""
+    fill_in "Please give an overview of the workshop, skills and or master class sessions that you would be willing to offer, as well as the age ranges you are comfortable with, or would like experience delivering to (our young people engaging with this programme range from 4 – 18 years)", with: ""
+    fill_in "Please provide contact details for x 2 references and list any other relevant information that supports your residency application", with: ""
+    click_button "Submit Application"
+    expect(page).to have_content("Application failed to submit")
+
+    expect(page).to have_content("Name can't be blank")
+    expect(page).to have_content("Date of birth can't be blank")
+    expect(page).to have_content("Gender can't be blank")
+    expect(page).to have_content("Residency type can't be blank")
+    expect(page).to have_content("Preferred start date can't be blank")
+    expect(page).to have_content("Duration can't be blank")
+    expect(page).to have_content("Address can't be blank")
+    expect(page).to have_content("Email can't be blank")
+    expect(page).to have_content("Phone can't be blank")
+    expect(page).to have_content("Social media can't be blank")
+    expect(page).to have_content("Medium can't be blank")
+    expect(page).to have_content("Artistic statement can't be blank")
+    expect(page).to have_content("Experience can't be blank")
+    expect(page).to have_content("Intended work can't be blank")
+    expect(page).to have_content("Offering can't be blank")
+    expect(page).to have_content("References can't be blank")
+  end
 end

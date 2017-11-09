@@ -9,8 +9,13 @@ class PetitionsController < ApplicationController
   def create
     @petition = Petition.new(petition_params)
     @petition.save
-    flash[:success]="Application was successfully submitted"
-    redirect_to petitions_path
+    if @petition.save
+      flash[:success]="Application was successfully submitted"
+      redirect_to petitions_path
+    else
+      flash[:danger]="Application failed to submit"
+      render :new
+    end
   end
 
   private
