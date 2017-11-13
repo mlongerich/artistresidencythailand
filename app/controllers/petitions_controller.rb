@@ -13,7 +13,7 @@ class PetitionsController < ApplicationController
       flash[:success]="Application was successfully submitted"
       redirect_to petitions_path
     else
-      flash[:danger]="Application failed to submit"
+      flash.now[:danger]="Application failed to submit"
       render :new
     end
   end

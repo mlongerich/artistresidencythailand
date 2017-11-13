@@ -3,3 +3,34 @@
 // Header //
 
 body { padding-top: 78px; }
+
+// Colors //
+
+.bg-artblue { background-color: #70B9B0 }
+
+// navbar - sps //
+
+.sps { transition: all .600s ease; }
+
+.sps--abv {
+  @extend .navbar-light;
+  @extend .bg-light;
+  line-height: 80px;
+  height: 80px;
+}
+.sps--blw {
+  @extend .navbar-dark;
+  @extend .bg-dark;
+  line-height: 50px;
+  height: 50px;
+}
+
+// offest for anchor tags //
+
+section:before {
+  content:"";
+  display:block;
+  height:80px; /* fixed header height*/
+  margin:-80px 0 0; /* negative fixed header height */
+  visibility: hidden;
+}

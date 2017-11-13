@@ -10,25 +10,31 @@
 
   <body>
     <section id="header">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <h1>
+      <nav id="navbar-primary" class="navbar navbar-expand-lg fixed-top sps sps--abv">
+        <div class="container">
           <a class="navbar-brand" href="/">Artist Residency Thailand</a>
-        </h1>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerART" aria-controls="navbarTogglerART" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerART" aria-controls="navbarTogglerART" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse collapse" id="navbarTogglerART">
+            <ul class="nav navbar-nav ml-auto mt-2 mt-lg-0">
+              <li class="nav-item">
+                <%= link_to "Home <span class='sr-only'>(current)".html_safe, root_path, class: " nav-link #{ 'active' if current_page?(root_path) } " %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Programmes", root_path(anchor: 'section-programmes'), class: "nav-link" %>
+              </li>
+              <li class="nav-item"><%= link_to "Portfolio", root_path(anchor: 'section-portfolio'), class: "nav-link" %></li>
+              <li class="nav-item"><%= link_to "Contact", root_path(anchor: 'section-contact'), class: "nav-link" %></li>
+              <li class="nav-item">
+                <%= link_to "Apply", new_petition_path, class: " nav-link #{ 'active' if current_page?(new_petition_path)} " %>
+              </li>
+            </ul>
+          </div><!--/.navbar-collapse -->
         </div>
-        <div class="navbar-collapse collapse" id="navbarTogglerART">
-          <ul class="nav navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item active"><a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a></li>
-            <li class="nav-item"><a class="nav-link" href="#section-programmes">Programmes</a></li>
-            <li class="nav-item"><a class="nav-link" href="#section-portfolio">Portfolio</a></li>
-            <li class="nav-item"><a class="nav-link" href="#section-contact">Contact / Apply</a></li>
-          </ul>
-        </div><!--/.navbar-collapse -->
       </nav>
     </section>
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
         <div class="col-12">
           <% flash.each do |key, message| %>
