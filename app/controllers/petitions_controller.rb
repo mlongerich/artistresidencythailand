@@ -2,6 +2,10 @@ class PetitionsController < ApplicationController
   def index
   end
 
+  def admin
+    @petitions = Petition.all
+  end
+
   def new
     @petition = Petition.new
   end

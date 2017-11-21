@@ -15,4 +15,6 @@ class Petition < ApplicationRecord
   validates :intention, presence: { message: "Intended work can't be blank" }
   validates :offering, presence: true
   validates :references, presence: true
+
+  default_scope { order(created_at: :desc) }
 end

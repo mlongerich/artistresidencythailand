@@ -1,0 +1,35 @@
+<h3 class="text-center">All Applicants</h3>
+<div class="row">
+  <% @petitions.each do |petition| %>
+
+    <div class="col-md-6">
+
+      <div class="card card-body">
+        <h5 class="card-title">
+          <%= link_to petition.name, petition_path(petition) %> (<%= petition.gender %>)
+        </h5>
+        <div class="row">
+
+        <div class="col-lg-6">
+          <p class="card-text"> <strong>Residency Type:</strong> <%= petition.residency_type %> </p>
+        </div>
+        <div class="col-lg-6">
+          <p class="card-text"> <strong>Medium:</strong> <%= petition.practice_medium %> </p>
+        </div>
+        <div class="col-lg-6"
+          <p class="card-text"> <strong>Start Date:</strong> <%= petition.start_date.strftime("%d %B %Y") %> </p>
+        </div>
+        <div class="col-lg-6"
+          <p class="card-text"> <strong>Duration:</strong> <%= petition.duration %> </p>
+        </div>
+        <div class="col-lg-6"
+          <p class="card-text"> <strong>Email:</strong> <%= petition.email %> </p>
+        </div>
+        <div class="col-lg-6"
+          <p class="card-text"> <strong>Phone:</strong> <%= petition.phone %> </p>
+        </div>
+      </div>
+        </div>
+    </div>
+  <% end %>
+</div>

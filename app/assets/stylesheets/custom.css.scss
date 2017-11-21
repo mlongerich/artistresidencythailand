@@ -2,7 +2,7 @@
 
 // Header //
 
-body { padding-top: 78px; }
+body { padding-top: 60px; }
 
 // Colors //
 
@@ -15,14 +15,14 @@ body { padding-top: 78px; }
 .sps--abv {
   @extend .navbar-light;
   @extend .bg-light;
-  line-height: 80px;
-  height: 80px;
+//  line-height: 80px;
+//  height: 80px;
 }
 .sps--blw {
   @extend .navbar-dark;
   @extend .bg-dark;
-  line-height: 50px;
-  height: 50px;
+//  line-height: 50px;
+//  height: 50px;
 }
 
 // offest for anchor tags //
