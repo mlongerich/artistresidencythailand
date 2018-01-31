@@ -3,7 +3,8 @@ class Petition < ApplicationRecord
   validates :dob, presence: { message: "Date of birth can't be blank" }
   validates :gender, presence: true
   validates :residency_type, presence: true
-  validates :start_date, presence: { message: "Preferred start date can't be blank"}
+  validates :start_date,
+            presence: { message: "Preferred start date can't be blank" }
   validates :duration, presence: true
   validates :address, presence: true
   validates :email, presence: true

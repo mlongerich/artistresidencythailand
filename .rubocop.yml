@@ -1,0 +1,21 @@
+Documentation:
+  Enabled: false
+AllCops:
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'lib/**/*'
+    - !ruby/regexp /old_and_unused\.rb$/
+      # too many lines in blocks
+    - 'spec/rails_helper.rb'
+    - 'spec/features/submitting_application_spec.rb'
+    - 'spec/features/listing_petitions_spec.rb'
+    - 'Guardfile'
+    - 'Gemfile'
+      # other configuration
+      # # ...
+
