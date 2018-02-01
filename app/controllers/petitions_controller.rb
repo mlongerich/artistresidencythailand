@@ -25,6 +25,14 @@ class PetitionsController < ApplicationController
     @petition = Petition.find(params[:id])
   end
 
+  protected
+
+  def resource_not_found
+    message = 'The application you are looking for could not be found'
+    flash[:alert] = message
+    redirect_to root_path
+  end
+
   private
 
   def petition_params
