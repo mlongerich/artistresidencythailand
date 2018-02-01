@@ -1,4 +1,6 @@
 class PetitionsController < ApplicationController
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
+
   def index; end
 
   def admin
@@ -22,21 +24,25 @@ class PetitionsController < ApplicationController
   end
 
   def show
-    @petition = Petition.find(params[:id])
   end
 
   def edit
-    @petition = Petition.find(params[:id])
   end
 
   def update
-    @petition = Petition.find(params[:id])
     if @petition.update(petition_params)
       flash[:success] = 'Application was successfully updated'
       redirect_to @petition
     else
       flash.now[:danger] = 'Application has not been updated'
       render :edit
+    end
+  end
+
+  def destroy
+    if @petition.destroy
+      flash[:success] = 'Application has been deleted'
+      redirect_to admin_path
     end
   end
 
@@ -56,5 +62,9 @@ class PetitionsController < ApplicationController
                                      :practice_medium, :artistic_statement,
                                      :history, :offering, :references,
                                      :start_date, :duration, :intention)
+  end
+
+  def set_article
+    @petition = Petition.find(params[:id])
   end
 end

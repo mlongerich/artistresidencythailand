@@ -17,6 +17,7 @@ AllCops:
     - 'spec/features/show_petitions_spec.rb'
     - 'spec/requests/petitions_spec.rb'
     - 'spec/features/editing_petition_spec.rb'
+    - 'app/controllers/petitions_controller.rb'
     - 'Guardfile'
     - 'Gemfile'
       # other configuration

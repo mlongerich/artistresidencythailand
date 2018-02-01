@@ -118,5 +118,8 @@
       </div>
     </div>
   </div>
-  <%= link_to "Edit Application", edit_petition_path(@petition), class: "btn btn-primary btn-lg btn-space" %>
+  <%= link_to "Edit Application", edit_petition_path(@petition), class: "btn btn-primary btn-lg btn-200" %>
+  <%= link_to "Delete Application", petition_path(@petition), method: :delete,
+      data: { confirm: "Are you sure you want to delete the application?" },
+      class: "btn btn-danger btn-lg btn-200" %>
 </article>
