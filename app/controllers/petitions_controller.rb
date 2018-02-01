@@ -21,6 +21,10 @@ class PetitionsController < ApplicationController
     end
   end
 
+  def show
+    @petition = Petition.find(params[:id])
+  end
+
   private
 
   def petition_params

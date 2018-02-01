@@ -27,7 +27,7 @@
               <li class="nav-item"><%= link_to "Portfolio", root_path(anchor: 'section-portfolio'), class: "nav-link" %></li>
               <li class="nav-item"><%= link_to "Contact", root_path(anchor: 'section-contact'), class: "nav-link" %></li>
               <li class="nav-item">
-                <%= link_to "Apply", new_application_path, class: " nav-link #{ 'active' if current_page?(new_application_path)} " %>
+                <%= link_to "Apply", application_path, class: " nav-link #{ 'active' if current_page?(application_path)} " %>
               </li>
             </ul>
           </div><!--/.navbar-collapse -->

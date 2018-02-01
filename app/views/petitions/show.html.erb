@@ -1,0 +1,121 @@
+<article class="detail-article">
+  <h1 class="text-center">
+    <%= @petition.name %> (<%= @petition.gender.titleize %>)
+  </h1>
+  <div class="card petition-card">
+    <div class="card-header">
+      <h5 class="card-title text-center">Profile</h5>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-form-label col-md-3">
+          <strong>Email:</strong>
+        </div>
+        <div class="col-md-3">
+          <%= @petition.email %>
+        </div>
+
+        <div class="col-form-label col-md-3">
+          <strong>Phone:</strong>
+        </div>
+        <div class="col-md-3">
+          <%= @petition.phone %>
+        </div>
+
+        <div class="col-form-label col-md-3">
+          <strong>Date of Birth:</strong>
+        </div>
+        <div class="col-md-3">
+          <%= @petition.dob.strftime("%b %d %Y") %>
+        </div>
+
+        <div class="col-form-label col-md-3">
+          <strong>Address:</strong>
+        </div>
+        <div class="col-md-3">
+          <%= @petition.address %>
+        </div>
+
+        <div class="col-form-label col-md-3">
+          <strong>Social Media:</strong>
+        </div>
+        <div class="col-md-9">
+          <%= @petition.social_media %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card petition-card">
+    <div class="card-header">
+      <h5 class="card-title text-center">Residency Information</h5>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-form-label col-md-3">
+          <strong>Residency type:</strong>
+        </div>
+        <div class="col-md-3">
+          <%= @petition.residency_type.titleize %>
+        </div>
+
+        <div class="col-form-label col-md-3">
+          <strong>Medium:</strong>
+        </div>
+        <div class="col-md-3">
+          <%= @petition.practice_medium %>
+        </div>
+
+        <div class="col-form-label col-md-3">
+          <strong>Start date:</strong>
+        </div>
+        <div class="col-md-3">
+          <%= @petition.start_date %>
+        </div>
+
+        <div class="col-form-label col-md-3">
+          <strong>Duration:</strong>
+        </div>
+        <div class="col-md-3">
+          <%= @petition.duration %>
+        </div>
+
+
+        <div class="col-form-label col-md-3">
+          <strong>Artistic Statement:</strong>
+        </div>
+        <div class="col-md-9">
+          <%= @petition.artistic_statement %>
+        </div>
+
+        <div class="col-form-label col-md-3">
+          <strong>History:</strong>
+        </div>
+        <div class="col-md-9">
+          <%= @petition.history %>
+        </div>
+
+        <div class="col-form-label col-md-3">
+          <strong>Offering:</strong>
+        </div>
+        <div class="col-md-9">
+          <%= @petition.offering %>
+        </div>
+
+        <div class="col-form-label col-md-3">
+          <strong>References:</strong>
+        </div>
+        <div class="col-md-9">
+          <%= @petition.references %>
+        </div>
+
+        <div class="col-form-label col-md-3">
+          <strong>Intention:</strong>
+        </div>
+        <div class="col-md-9">
+          <%= @petition.intention %>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
