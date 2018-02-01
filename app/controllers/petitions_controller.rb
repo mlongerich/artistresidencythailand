@@ -25,6 +25,21 @@ class PetitionsController < ApplicationController
     @petition = Petition.find(params[:id])
   end
 
+  def edit
+    @petition = Petition.find(params[:id])
+  end
+
+  def update
+    @petition = Petition.find(params[:id])
+    if @petition.update(petition_params)
+      flash[:success] = 'Application was successfully updated'
+      redirect_to @petition
+    else
+      flash.now[:danger] = 'Application has not been updated'
+      render :edit
+    end
+  end
+
   protected
 
   def resource_not_found
